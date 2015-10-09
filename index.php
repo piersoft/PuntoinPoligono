@@ -77,11 +77,14 @@ function showPosition(position) {
   }else{
 
   }
-
-    L.mapbox.accessToken = 'pk.eyJ1IjoicGllcnNvZnQiLCJhIjoiY2lmaDV6dmh1MDB0b3Rha25hb29rNzdlaSJ9.bTHBvonrul9yq3difBGJ-A';
+// sostituire con la propria API Token dal sito mapbox
+    L.mapbox.accessToken = '<inseire propria api token>';
     var state = document.getElementById('state');
     var map = L.mapbox.map('map', 'mapbox.emerald')
         .setView([40.3590, 18.1815], 15);
+        var credits = L.control.attribution().addTo(map);
+    credits.addAttribution("Dataset Lic. CC-BY <a href='http://dati.comune.lecce.it' />Comune di Lecce</a> | <a href='https://github.com/piersoft/PuntoinPoligono/' />Code</a> by <a href='https://www.twitter.com/piersoft' />@piersoft</a> Lic. MIT");
+
 
         $.ajax({
             url: 'sosta_lecce.geojson',
